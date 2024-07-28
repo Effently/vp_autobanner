@@ -15,7 +15,7 @@ if(!TOKEN) {
   import("./config/token.js").then(module => {
     TOKEN = module.default;
   });
-}
+} else console.log("Working in the cloud.");
 
 let textFont = "MainFont";
 if (conf.font[0].filename != "default") {
