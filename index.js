@@ -7,10 +7,15 @@ import {
   ActivityType,
 } from "discord.js";
 import { GlobalFonts, loadImage, createCanvas } from "@napi-rs/canvas";
-import conf from "./config/conf.js";
-import TOKEN from "./config/token.js";
 import fs from "fs";
 import { join } from "node:path";
+import conf from "./config/conf.js";
+let TOKEN = process.env.TOKEN;
+if(!TOKEN) {
+  import("./config/token.js").then(module => {
+    TOKEN = module.default;
+  });
+}
 
 let textFont = "MainFont";
 if (conf.font[0].filename != "default") {
