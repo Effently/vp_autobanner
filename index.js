@@ -140,7 +140,7 @@ client.once(Events.ClientReady, (readyClient) => {
 
         // Перед рисованием текста
         const totalHeight = textHeight + conf.text.gap + statusTextHeight;
-        const infoBarHeight = (36 / 135) * background.height; //плашка с названием сервера в дс, не 48
+        const infoBarHeight = (36 / 135) * background.height; //плашка с названием сервера в дс, не 48 // дс обновил размеры, поменять
         const startY = ((background.height - infoBarHeight) / 2) - (totalHeight / 2) + infoBarHeight;
 
         // Рисуем закругленный квадрат
